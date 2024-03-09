@@ -4,7 +4,7 @@ import express, { json } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import "express-async-errors";
-import { carRouter } from "./routes/user.routes";
+import { carRouter } from "./routes/car.routes";
 import { HandleErrors } from "./middlewares/handleErrors.middleware";
 
 export const app = express();
