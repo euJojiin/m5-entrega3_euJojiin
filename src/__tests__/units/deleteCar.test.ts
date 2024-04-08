@@ -1,12 +1,12 @@
 import "reflect-metadata";
 import { CarServices } from "../../services/car.services";
-import { carMock} from "../__mocks__/car.mocks";
+import { carMock } from "../__mocks__/car.mocks";
+import { container } from "tsyringe";
 
 describe("Unit test: delete one car", () => {
-	const carServices = new CarServices();
-    
-    it("should work correctly.", async () => {
+	const carServices = container.resolve(CarServices);
 
-        await carServices.deleteCar(carMock.id)
+	it("should work correctly.", async () => {
+		await carServices.deleteCar(carMock.id);
 	});
 });
